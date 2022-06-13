@@ -18,6 +18,7 @@ use App\Http\Controllers\ProductController;
 // Route::post('/products',[ProductController::class,'store']);
 
 Route::resource('products', ProductController::class);
+Route::get('products/search/{name}', [ProductController::class,'search']);
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
